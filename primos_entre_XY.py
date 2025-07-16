@@ -1,10 +1,8 @@
-#region * Primos entre XY
-import time
+#region * Primos entre XY *
 primos = []
 casos = int(input('Quantos casos você quer que sejam resolvidos?\n'))
 for i in range(casos):
     x, y = map(int, input(f'caso {i + 1}\n').split())
-    inicio = time.time()
     X = min(x, y)
     Y = max(x, y)
     while X <= Y:
@@ -18,6 +16,4 @@ for i in range(casos):
              primos.append(X)
     print(f'Os números primos entre {x} e {y} são: \n{primos}')
     primos.clear()
-fim = time.time()
-print(f"Tempo de execução: {fim - inicio:.4f} segundos")
 #endregion 
