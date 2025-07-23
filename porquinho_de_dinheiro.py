@@ -1,25 +1,30 @@
 #region Porquinho de dinheiro
-def porquinho_dinamico(casos):
+def porquinho(casos):
     for c in range(casos):
-        vazio, cheio = map(int, input(f'\nCaso {c + 1} — Digite peso vazio e cheio: ').split())
-        peso_total = cheio - vazio
-        n = int(input("Quantos tipos de moedas você tem? "))
-        moedas = []
-        for i in range(n):
-            valor, peso = map(int, input(f"Moeda {i + 1} — valor e peso: ").split())
-            moedas.append((valor, peso))
+        cheio, vazio = map(int, input('Peso cheio e vazio: ').split())
+        capacidade = cheio - vazio
+        if capacidade <= 0:
+            print('Isoo é impossivel')
+            continue
+        moedas = int(input('Quantidade de moedas: '))
+        moedasApp = []
+        for i in range(moedas):
+            valor, peso = map(int, input(f'Valor e peso da {i + 1}ª moeda: ').split())
+            moedasApp.append((valor, peso))
         INF = float('inf')
-        dp = [INF] * (peso_total + 1)
-        dp[0] = 0 
-        for valor, peso in moedas:
-            for w in range(peso, peso_total + 1):
-                if dp[w - peso] + valor < dp[w]:
-                    dp[w] = dp[w - peso] + valor
-        if dp[peso_total] == INF:
-            print("Isso é impossível.")
+        dp = [INF] * (capacidade + 1)
+        dp[0] = 0
+        for valor, peso in moedasApp:
+            for i in range(peso, capacidade + 1):
+                if dp[i - peso] + valor < dp[i]:
+                    print(dp[capacidade])
+                    dp[i] = dp[i - peso] + valor
+        if dp[capacidade] != INF:
+            print(dp[capacidade])
+            print(f'O menor valor no porquinho é {dp[capacidade]}')
         else:
-            print(f"O valor mínimo de dinheiro no cofrinho é {dp[peso_total]}.")
+            print('Isso é impossível')
 
-casos = int(input("Digite quantos casos devem ser resolvidos: "))
-porquinho_dinamico(casos)
+casos = int(input(f'Digite quantos casos:'))
+porquinho(casos)
 #endregion
