@@ -1,11 +1,11 @@
 #region Movimentação dos doces
-casos = int(input('Dígite quantos casos devem ser resolvidos\n'))
+casos = int(input('Número de casos: '))
 for i in range(casos):
     docesApp = []
     subApp = []
-    pacotes = int(input(f'Quantos pacotes de doce no {i + 1}º Caso?\n'))
+    pacotes = int(input(f'Pacotes de doce no {i + 1}º Caso: '))
     for j in range(pacotes):
-        doces = int(input(f'Quantos doces existem no {j + 1}º Pacote?\n'))
+        doces = int(input(f'Doces existem no {j + 1}º Pacote:'))
         docesApp.append(doces)
     media = sum(docesApp) / pacotes
     if sum(docesApp) % pacotes != 0:

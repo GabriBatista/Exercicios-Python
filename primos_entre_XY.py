@@ -1,6 +1,6 @@
 #region * Primos entre XY *
 primos = []
-casos = int(input('Quantos casos você quer que sejam resolvidos?\n'))
+casos = int(input('Casos a serem resolvidos: '))
 for i in range(casos):
     x, y = map(int, input(f'caso {i + 1}\n').split())
     X = min(x, y)

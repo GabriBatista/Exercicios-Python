@@ -1,8 +1,8 @@
 #region * Soma de números invertidos *
-quantSomas = int(input("Digite quantas somas você quer resolver\n"))
+quantSomas = int(input("Número de somas: "))
 guardarResul = []
 guardarResuls = []
-print("Escreva somente os números que serão somados, sem sinal")
+print("Números a serem somados: ")
 for i in range(quantSomas):
     i - 1
     numeros = input().split()

@@ -1,6 +1,6 @@
 #region * Lista até 42 *
 guardarNums = []
-numLista = int(input("Quantos números deseja digitar?\n"))
+numLista = int(input("Quantidade de números: "))
 print("Digite os números:")
 for _ in range(numLista):
     nums = int(input())

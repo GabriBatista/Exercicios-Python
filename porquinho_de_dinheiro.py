@@ -4,7 +4,7 @@ def porquinho(casos):
         cheio, vazio = map(int, input('Peso cheio e vazio: ').split())
         capacidade = cheio - vazio
         if capacidade <= 0:
-            print('Isoo é impossivel')
+            print('Isso é impossivel')
             continue
         moedas = int(input('Quantidade de moedas: '))
         moedasApp = []
@@ -24,7 +24,6 @@ def porquinho(casos):
             print(f'O menor valor no porquinho é {dp[capacidade]}')
         else:
             print('Isso é impossível')
-
-casos = int(input(f'Digite quantos casos:'))
+casos = int(input(f'Número de casos:'))
 porquinho(casos)
 #endregion

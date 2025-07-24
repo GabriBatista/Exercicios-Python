@@ -4,7 +4,7 @@ from collections import Counter
 def gerar_contas_aleatorias(n):
     contas = []
     for i in range(n):
-        if contas and random.random() < 0.35:
+        if contas and random.random() < 0.4:
             contas.append(random.choice(contas))
             continue
         controle = f"{random.randint(0, 99):02d}"
